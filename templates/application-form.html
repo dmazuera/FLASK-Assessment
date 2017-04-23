@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Entry for Engineering Apptitude Test{% endblock %}
+
+{% block content %}
+<h1>Engineering Aptitude Test</h1>
+
+<p> Are you an engineer applying for an engineering job? <br> The following engineering aptitude page covers a huge range of tests, but find out more about the most common tests and how we can help you prepare for them.<br> Please fill in the information below.</p>
+
+    <form action="/application-success" method="get">
+      What is your first name? <input type="text" name="firstname">
+      <br>
+      <b>What is your last name? </b><input type="text" name="lastname">
+      <br>
+      What is your salary requirement? <input type="text" name="salary">
+      <br>
+      Which job are you applying for:
+          {% for job in jobs %}
+            <input type="checkbox" name="job" value="{{job}}"> {{job}}
+          <!-- This jinga will create a check box for all jobs in list jobs from server.py /show-form -->
+          {% endfor %}
+
+        <br>
+        <br>
+
+      <input type="submit">
+    </form>
+
+{% endblock %}

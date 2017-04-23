@@ -1,0 +1,9 @@
+/* Your styles can go here. */
+input {
+	background-color: yellow;
+}
+
+p {
+    border-style: solid;
+    border-width: 1px;
+}
